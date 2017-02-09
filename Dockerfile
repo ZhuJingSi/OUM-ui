@@ -23,6 +23,8 @@ RUN cd $(npm root -g)/npm \
 
 COPY . /app/
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 RUN npm run build && \
     cp -r dist/* /usr/share/nginx/html/
 
