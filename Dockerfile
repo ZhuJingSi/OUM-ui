@@ -24,7 +24,7 @@ RUN cd $(npm root -g)/npm \
 COPY . /app/
 
 RUN npm run build && \
-    cp -r dist /usr/share/nginx/html/
+    cp -r dist/* /usr/share/nginx/html/
 
 
 CMD nginx -g 'daemon off;'
