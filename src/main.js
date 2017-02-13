@@ -7,8 +7,12 @@ import 'element-ui/lib/theme-default/index.css';
 import routes from './router';
 import App from './App';
 
+// requires and returns all modules that match
+const requireAll = requireContext => requireContext.keys().map(requireContext);
+
 // import all svg
-import './assets/icon_github.svg';
+const req = require.context('./assets/svg', true, /\.svg$/);
+requireAll(req);
 
 Vue.use(VueRouter);
 Vue.use(ElementUI);
